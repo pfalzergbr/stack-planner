@@ -19,6 +19,11 @@ const routes = [
     component: Home,
   },
   {
+    path: "/login",
+    name: "Login",
+    component:() => import( "../views/Login.vue"),
+  },
+  {
     path: "/profile",
     name: "UserProfile",
     beforeEnter: requireAuth,
