@@ -6,7 +6,6 @@ const user = ref(auth.currentUser)
 
 auth.onAuthStateChanged(currentUser => {
   user.value = currentUser;
-  console.log(user.value);
 });
 
 const getUser = () => {

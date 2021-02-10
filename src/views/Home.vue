@@ -7,13 +7,13 @@
 
 <script>
 // @ is an alias to /src
-import useLogin from '@/hooks/useLogin.js';
+import useAuth from "@/hooks/useAuth.js";
+
 export default {
   setup() {
-    const {error, isLoading, login} = useLogin();
-    
-    return {error, isLoading, login};
-  }
-};
+    const { error, isLoading, login } = useAuth();
 
+    return { error, isLoading, login };
+  },
+};
 </script>
