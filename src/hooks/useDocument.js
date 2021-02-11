@@ -14,6 +14,7 @@ const useDocument = (collection) => {
       isLoading.value = false;
       return response;
     } catch (e) {
+      console.log(e.message);
       error.value = "Something went wrong. Cannot create new document";
       isLoading.value = false;
     }
