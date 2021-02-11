@@ -5,7 +5,6 @@ export const clearForm = (form) => {
 };
 
 export const validateForm = (form) => {
-  console.log(form);
   let formIsValid = true;
   for (const key in form) {
     form[key].error = null;
@@ -22,3 +21,11 @@ export const validateForm = (form) => {
   }
   return formIsValid;
 };
+
+export const extractFormData = (formData) => {
+  const form = {...formData};
+  for (const key in form) {
+    form[key] = form[key].val;
+  }
+  return form;
+}
