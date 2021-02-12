@@ -7,6 +7,8 @@ const getProjects = () => {
   const isLoading = ref(null);
   const projects = ref(null);
 
+  //TODO - Implement filters
+
   const loadProjects = async () => {
     isLoading.value = true;
     error.value = null;

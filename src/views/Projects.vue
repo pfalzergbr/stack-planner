@@ -3,9 +3,12 @@
     <h1>Projects</h1>
     <div v-if="isLoading">Loading</div>
     <div v-else class="projects__container">
-      <div v-for="project in projects" :key="project.id">
+      <router-link 
+        v-for="project in projects" 
+        :key="project.id" 
+        :to="`/projects/${project.id}`">
         {{ project.projectName }}
-      </div>
+      </router-link>
     </div>
   </div>
 </template>

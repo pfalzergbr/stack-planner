@@ -23,13 +23,14 @@ const routes = [
     name: "Login",
     component:() => import( "../views/Login.vue"),
   },
-  {
-    path: "/profile",
-    name: "UserProfile",
-    beforeEnter: requireAuth,
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/UserProfile.vue"),
-  },
+  // TODO -implement this later
+  // {
+  //   path: "/profile",
+  //   name: "UserProfile",
+  //   beforeEnter: requireAuth,
+  //   component: () =>
+  //     import(/* webpackChunkName: "about" */ "../views/UserProfile.vue"),
+  // },
   {
     path: "/projects",
     name: "Projects",

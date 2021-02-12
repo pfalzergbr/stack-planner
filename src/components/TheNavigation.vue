@@ -6,7 +6,7 @@
       </router-link>
     </div>
     <div v-if="user" class="navigation__links--loggedIn" >
-      <router-link :to="{ name: 'UserProfile' }">Profile</router-link>
+      <!-- <router-link :to="{ name: 'UserProfile' }">Profile</router-link> -->
       <router-link :to="{ name: 'Projects' }">Projects</router-link>
       <router-link :to="{ name: 'NewProject' }">New Project</router-link>
       <base-button @click="handleLogout">Logout</base-button>
