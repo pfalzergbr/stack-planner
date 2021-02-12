@@ -13,7 +13,6 @@ const getProjects = () => {
 
     try {
       const response = await docRef.get();
-      console.log(response);
       projects.value = response.docs.map((document) => {
         return { ...document.data(), id: document.id };
       });

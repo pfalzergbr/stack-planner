@@ -1,7 +1,12 @@
 <template>
   <div>
     <h1>Projects</h1>
-    <div class="projects__container"></div>
+    <div v-if="isLoading">Loading</div>
+    <div v-else class="projects__container">
+      <div v-for="project in projects" :key="project.id">
+        {{ project.projectName }}
+      </div>
+    </div>
   </div>
 </template>
 
