@@ -1,20 +1,21 @@
 import { ref } from "vue";
 import { firestore } from "@/firebase/config";
 
+
 const useDocument = (collection) => {
   const error = ref(null);
   const isLoading = ref(null);
+  const docRef = firestore.collection(collection)
 
   const addDocument = async (document) => {
     error.value = null;
     isLoading.value = true;
 
     try {
-      const response = await firestore.collection(collection).add(document);
+      const response = docRef.add(document);
       isLoading.value = false;
       return response;
     } catch (e) {
-      console.log(e.message);
       error.value = "Something went wrong. Cannot create new document";
       isLoading.value = false;
     }
@@ -42,8 +43,7 @@ const useDocument = (collection) => {
     error.value = null;
 
     try {
-      const response = await firestore
-        .collection(collection)
+      const response = await docRef
         .doc(id)
         .update(updates);
       isLoading.value = false;
@@ -54,7 +54,8 @@ const useDocument = (collection) => {
     }
   };
 
-  return { error, isLoading, addDocument, deleteDocument, updateDocument };
+ 
+  return { error, isLoading, addDocument, deleteDocument, updateDocument};
 };
 
 export default useDocument;
